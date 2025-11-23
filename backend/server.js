@@ -9,11 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // Serve frontend
-app.use(express.static(path.join(__dirname, "../frontend")));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/index.html"));
-});
 
 // API
 let students = [];

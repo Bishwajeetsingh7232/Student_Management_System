@@ -1,4 +1,5 @@
-const apiURL = "https://student-management-system-w15m.onrender.com/students";
+const apiUrl = "https://student-management-system-w15m.onrender.com/students";
+
 
 
 // Fetch students on page load
