@@ -7,6 +7,8 @@ const PORT = 5000;
 app.use(express.json());
 app.use(cors());
 
+// Root route
+
 
 // Temporary database (array)
 let students = [];
@@ -37,6 +39,7 @@ app.post("/students", (req, res) => {
 
     res.status(200).json({ message: "Student added successfully", student: newStudent });
 });
+
 
 // ---------------------------
 // 2. GET All Students
@@ -89,6 +92,11 @@ app.delete("/students/:id", (req, res) => {
 
     res.status(200).json({ message: "Student deleted successfully" });
 });
+
+app.get("/", (req, res) => {
+    res.send("Backend is running ✅");
+});
+
 
 // Start server
 app.listen(PORT, () => {
