@@ -1,3 +1,6 @@
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../frontend")));
+
 
 const express = require("express");
 const cors = require("cors");
@@ -103,6 +106,11 @@ app.get("/", (req, res) => {
 app.get("/health", (req, res) => {
     res.json({ status: "ok", uptime: process.uptime() });
 });
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
 
 // Start server
 app.listen(PORT, () => {
