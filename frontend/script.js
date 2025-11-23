@@ -1,4 +1,5 @@
-const apiURL = "http://localhost:5000/students";
+const apiURL = "https://student-management-system-w15m.onrender.com/students";
+
 
 // Fetch students on page load
 window.onload = fetchStudents;

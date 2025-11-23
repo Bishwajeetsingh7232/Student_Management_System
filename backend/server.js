@@ -99,6 +99,10 @@ app.get("/", (req, res) => {
     res.send("Backend is running ✅");
 });
 
+// Health check
+app.get("/health", (req, res) => {
+    res.json({ status: "ok", uptime: process.uptime() });
+});
 
 // Start server
 app.listen(PORT, () => {
