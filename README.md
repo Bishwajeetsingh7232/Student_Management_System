@@ -26,7 +26,7 @@ The user can:
 https://steady-faun-f64db7.netlify.app/
 
 ### ✅ Backend (Render)
-https://student-management-system-w15m.onrender.com/
+https://student-management-system-w15m.onrender.com/students
 
 ---
 
