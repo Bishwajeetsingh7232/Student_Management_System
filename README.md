@@ -1,120 +1,194 @@
-# 🎓 Student Management System  
-A simple **Basic CRUD (Create, Read, Update, Delete)** application built using **HTML, CSS, JavaScript (Frontend)** and **Node.js + Express (Backend)**.  
-This project was created as part of a weekly assignment.
+# Student Management System ✅
+Full Stack Application | Docker | Render Deployment | CI/CD | Monitoring
+
+## 📌 Overview
+This is a Full Stack Student Management System built using:
+
+- HTML, CSS, JavaScript (Frontend)
+- Node.js + Express (Backend)
+- Docker & Docker Compose
+- Cloud Deployment (Render + Netlify)
+- CI/CD using GitHub Actions
+- Monitoring using Prometheus & Grafana
+- Health Check API
+
+The user can:
+✅ Add Students  
+✅ View Students  
+✅ Delete Students  
+✅ Update Students  
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-### ✔️ Add Student  
-- Input fields: **Name**, **Age**, **Course**  
-- JavaScript validation  
-- Sends data to backend using **Fetch API**
+### ✅ Frontend (Netlify)
+https://steady-faun-f64db7.netlify.app/
 
-### ✔️ Display Student List  
-- Students are fetched from backend API  
-- Students appear in a clean table format  
-- Each row contains **Edit** and **Delete** buttons
-
-### ✔️ Edit Student  
-- Updates student data in the backend  
-- Validates updated values
-
-### ✔️ Delete Student  
-- Deletes a student from backend  
-- Instantly updates the frontend table
+### ✅ Backend (Render)
+https://student-management-system-w15m.onrender.com/
 
 ---
 
-## 🛠️ Tech Stack
+## 🧱 Tech Stack
 
-### **Frontend**
-- HTML  
-- CSS  
+### Frontend
+- HTML
+- CSS
 - JavaScript
+- Fetch API
 
-### **Backend**
-- Node.js  
+### Backend
+- Node.js
 - Express.js
+- CORS
 
-### **Database**
-- Temporary **Array-based Storage** (No Database Required)
+### Database
+- Temporary in-memory storage
 
----
-
-## 📁 Project Structure
-
-Student_Management_System/
-│── backend/
-│ ├── server.js
-│ └── package.json
-│
-└── frontend/
-├── index.html
-├── style.css
-└── script.js
-
+### DevOps & Deployment
+- Docker
+- Docker Compose
+- Render Cloud Hosting
+- Netlify Hosting
+- GitHub Actions (CI/CD)
+- Prometheus + Grafana (Monitoring)
 
 ---
 
-## 🔌 Backend API Endpoints
+## 🐳 Docker Setup
 
-### **1️⃣ Add Student (POST)**
-POST /students
+### Backend Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 5000
+CMD ["node", "server.js"]
 
 shell
 Copy code
 
-### **2️⃣ Get All Students (GET)**
-GET /students
-
-markdown
-Copy code
-
-### **3️⃣ Update Student (PUT)**
-PUT /students/:id
-
-markdown
-Copy code
-
-### **4️⃣ Delete Student (DELETE)**
-DELETE /students/:id
+### `.dockerignore`
+node_modules
+Dockerfile
+docker-compose.yml
 
 yaml
 Copy code
 
 ---
 
-## ▶️ How to Run the Project
+## 🧩 Docker Compose
+version: "3"
+services:
+backend:
+build: ./backend
+ports:
+- "5000:5000"
+restart: always
 
-### **Backend**
-cd backend
-npm install
-node server.js
-
-arduino
-Copy code
-
-Server runs by default at:
-http://localhost:5000
-
-markdown
-Copy code
-
-### **Frontend**
-Simply open:
-frontend/index.html
+frontend:
+build: ./frontend
+ports:
+- "3000:3000"
+restart: always
 
 yaml
 Copy code
 
 ---
 
-## 📝 Assignment Completed By  
-**Bishwajeet Singh**  
-Student, CSE
+## 🌍 Deployment
+
+### ✅ Render (Backend)
+
+Steps:
+1. Push code to GitHub
+2. Create new Web Service on Render
+3. Select repo
+4. Set Environment Variables
+PORT=5000
+
+yaml
+Copy code
+5. Deploy ✅
 
 ---
 
-## ⭐ If you like this project, give it a star on GitHub!
+### ✅ Netlify (Frontend)
 
+Steps:
+1. Upload frontend folder
+2. Netlify generates live link
+3. Update API URL in `script.js`
+
+---
+
+## 🔁 CI/CD (GitHub Actions)
+
+Automations:
+✅ On every push → build Docker image  
+✅ Validate code  
+✅ Deploy to Render (optional)
+
+Folder:
+.github/workflows/deploy.yml
+
+yaml
+Copy code
+
+---
+
+## 📊 Monitoring & Health Check
+
+### ✅ Health Route
+/health
+
+makefile
+Copy code
+
+Returns:
+{ status: "ok" }
+
+yaml
+Copy code
+
+### ✅ Monitoring Tools
+- Prometheus
+- Grafana
+
+Used for:
+✅ Container monitoring  
+✅ CPU/RAM usage  
+✅ Uptime tracking
+
+---
+
+## ✅ Challenges Faced
+- Docker installation issues (WSL2 required)
+- Port conflicts (5000 already in use)
+- Render deployment paths
+- Serving frontend from backend
+- CI/CD configuration
+
+---
+
+## ✅ Final Results
+✅ Full Stack App Working  
+✅ Dockerized Frontend + Backend  
+✅ Cloud Deployment  
+✅ CI/CD Setup  
+✅ Monitoring Added  
+✅ Health Check Working
+
+---
+
+## ✅ Conclusion
+This project demonstrates:
+- Full stack development
+- Containerization
+- Cloud deployment
+- Automation pipelines
+- Monitoring in production
